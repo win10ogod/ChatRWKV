@@ -35,6 +35,8 @@ class RWKV_RNN(MyModule):
             self.FLOAT_MODE = torch.half
         elif args.FLOAT_MODE == 'bf16':
             self.FLOAT_MODE = torch.bfloat16
+        elif args.FLOAT_MODE == 'fp64':  # Add fp64 option
+            self.FLOAT_MODE = torch.float64    
         self.RUN_DEVICE = args.RUN_DEVICE
 
         with torch.no_grad():
